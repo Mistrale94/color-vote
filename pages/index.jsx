@@ -1,7 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import clientPromise from '../lib/mongodb'
+import { useEffect, useState } from 'react'
 
-export default function Home() {
+export default function Home({isConnected}) {
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const results = await fetch('/api/list');
+      const resultsJson = await results.json();
+      setRestaurants(resultsJson);
+    })();
+  }, []);
+
   return (
     <div>
       <Head>
@@ -25,7 +37,30 @@ export default function Home() {
           <input type="text" placeholder='Prénom'></input>
           <button type="submit">Rejoindre la session</button>
         </form>
+
+        <div>
+          {restaurants.map((restaurant) => (
+            <div className='card' key={restaurant.id}>
+              <h2>{restaurant.name}</h2>
+              <p>{restaurant.cuisine}</p>
+            </div>
+          ))}
+        </div>
       </main>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  try{
+    await clientPromise
+    return {
+      props: { isConnected: true },
+    }
+  } catch (e) {
+    console.error(e);
+    return {
+      props: { isConnected: false },
+    }
+  }
 }
