@@ -10,20 +10,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-
+      <main className="text-center">
         <figure>
-          <Image src="/image/logo.png" width={300} height={300} alt="Logo" />
+          <Image src="/image/logo.png" width={250} height={250} alt="Logo" className="mx-auto" />
         </figure>
-        <h1>Code pin</h1>
+        <h1 className="font-bold text-3xl mb-12">Code pin</h1>
 
-        <form>
-          <input type="text" placeholder='Code de la session'></input>
-          <input type="text" placeholder='Prénom'></input>
-          <button type="submit">Rejoindre la session</button>
+        <form className='inline-grid w-9/12'>
+          <input type="text" placeholder='Code de la session' className='mb-8 border-b-2 w-full'></input>
+          <input type="text" placeholder='Prénom'  className='mb-12 border-b-2 w-full'></input>
+          <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold">Rejoindre la session</button>
         </form>
       </main>
     </div>
