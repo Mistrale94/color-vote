@@ -1,8 +1,83 @@
 import React from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
+import { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
+import { useRouter } from 'next/router';
+import toast from 'react-hot-toast';
 
-const signup = () => {
+export default function Signup() {
+
+  const [inputedUserSignup, setInputedUserSignup] = useState({
+    email: '',
+    firstName: '',
+    lastName: '',
+    password: ''
+  });
+
+  const router = useRouter();
+
+  const [cookies, setCookie, removeCookie] = useCookies();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleCreateUser = async e => {
+    e.preventDefault();
+    try {
+      toast.loading('Inscription en cours...');
+      if (
+        !inputedUserSignup.email ||
+        !inputedUserSignup.email.includes('@') ||
+        !inputedUserSignup.password ||
+        !inputedUserSignup.firstName ||
+        !inputedUserSignup.lastName
+      ) {
+        toast.remove();
+        toast.error('Informations incorrectes');
+      } else {
+        //POST form values
+        const res = await fetch('/api/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: inputedUserSignup.email,
+            firstName: inputedUserSignup.firstName,
+            lastName: inputedUserSignup.lastName,
+            password: inputedUserSignup.password
+          })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          toast.remove();
+          toast.success('Compte créé');
+          setCookie('user', JSON.stringify(data), {
+            path: '/',
+            maxAge: 2592000,
+            sameSite: true,
+            secure: true
+          });
+          router.push('/');
+          toast.success('Connecté');
+        } else {
+          toast.remove();
+          toast.error('Erreur lors de la création du compte');
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (cookies.user) {
+      router.push('/');
+    }
+  }, [cookies.user, router]);
+
   return (
     <div>
       <Head>
@@ -17,11 +92,72 @@ const signup = () => {
         </figure>
         <h1 className='font-bold text-3xl mb-12'>S'inscrire</h1>
 
-        <form className='inline-grid w-9/12'>
-          <input type="text" placeholder='Nom' className='mb-8 border-b-2 w-full'></input>
-          <input type="text" placeholder='Prénom' className='mb-8 border-b-2 w-full'></input>
-          <input type="text" placeholder='Adresse email' className='mb-8 border-b-2 w-full'></input>
-          <input type="text" placeholder='Mot de passe' className='mb-12 border-b-2 w-full'></input>
+        <form method='POST' onSubmit={handleCreateUser} className='inline-grid w-9/12'>
+          <input
+            type="text"
+            placeholder='Nom'
+            className='mb-8 border-b-2 w-full'
+            value={inputedUserSignup.lastName || ''}
+            onChange={e =>
+              setInputedUserSignup({
+                ...inputedUserSignup,
+                lastName: e.target.value
+              })
+            }
+          >
+          </input>
+          <input 
+            type="text"
+            placeholder='Prénom'
+            className='mb-8 border-b-2 w-full'
+            value={inputedUserSignup.firstName || ''}
+            onChange={e =>
+              setInputedUserSignup({
+                ...inputedUserSignup,
+                firstName: e.target.value
+              })
+            }
+          >
+          </input>
+          <input
+            type="email"
+            placeholder='Adresse email'
+            className='mb-8 border-b-2 w-full'
+            value={inputedUserSignup.email || ''}
+            onChange={e =>
+              setInputedUserSignup({
+                ...inputedUserSignup,
+                email: e.target.value
+              })
+            }
+          >
+          </input>
+          <div>
+            <input
+              type={`${showPassword ? 'text' : 'password'}`}
+              placeholder='Mot de passe'
+              className='mb-12 border-b-2 w-full'
+              value={inputedUserSignup.password || ''}
+              minLength={8}
+              onChange={e =>
+                setInputedUserSignup({
+                  ...inputedUserSignup,
+                  password: e.target.value
+                })
+              }
+            >
+            </input>
+            <div className="toggle">
+              <input
+                className="toggle-state"
+                type="checkbox"
+                name="check"
+                value="check"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+              <div className="indicator"></div>
+            </div>
+          </div>
           <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold">S'inscrire</button>
 
 
@@ -42,5 +178,3 @@ const signup = () => {
     </div>
   );
 };
-
-export default signup;
