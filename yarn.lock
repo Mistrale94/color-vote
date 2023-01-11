@@ -784,6 +784,14 @@
     "js-yaml" "^4.1.0"
     "minimatch" "^3.1.2"
     "strip-json-comments" "^3.1.1"
+<<<<<<< HEAD
+=======
+
+"@heroicons/react@^2.0.13":
+  "integrity" "sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ=="
+  "resolved" "https://registry.npmjs.org/@heroicons/react/-/react-2.0.13.tgz"
+  "version" "2.0.13"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
 
 "@humanwhocodes/config-array@^0.11.8":
   "integrity" "sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g=="
@@ -854,9 +862,15 @@
   dependencies:
     "glob" "7.1.7"
 
+<<<<<<< HEAD
 "@next/swc-win32-x64-msvc@13.1.1":
   "integrity" "sha512-mVF0/3/5QAc5EGVnb8ll31nNvf3BWpPY4pBb84tk+BfQglWLqc5AC9q1Ht/YMWiEgs8ALNKEQ3GQnbY0bJF2Gg=="
   "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.1.1.tgz"
+=======
+"@next/swc-darwin-x64@13.1.1":
+  "integrity" "sha512-qWr9qEn5nrnlhB0rtjSdR00RRZEtxg4EGvicIipqZWEyayPxhUu6NwKiG8wZiYZCLfJ5KWr66PGSNeDMGlNaiA=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-13.1.1.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "13.1.1"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -970,6 +984,7 @@
   "integrity" "sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ=="
   "resolved" "https://registry.npmjs.org/@tsconfig/node16/-/node16-1.0.3.tgz"
   "version" "1.0.3"
+<<<<<<< HEAD
 
 "@types/cookie@^0.3.3":
   "integrity" "sha512-LKVP3cgXBT9RYj+t+9FDKwS5tdI+rPBXaNSkma7hvqy35lc7mAokC2zsqWJH0LaqIt3B962nuYI77hsJoT1gow=="
@@ -985,6 +1000,12 @@
     "hoist-non-react-statics" "^3.3.0"
 
 "@types/json-schema@^7.0.6":
+=======
+
+"@types/json-schema@^7.0.6":
+  "integrity" "sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ=="
+  "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.11.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "7.0.11"
 
 "@types/json5@^0.0.29":
@@ -992,6 +1013,7 @@
 
 "@types/node@*", "@types/node@14.18.33":
   "version" "14.18.33"
+<<<<<<< HEAD
 
 "@types/prop-types@*":
   "integrity" "sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w=="
@@ -1016,6 +1038,17 @@
   "version" "7.0.0"
 
 "@types/whatwg-url@^8.2.1":
+=======
+
+"@types/webidl-conversions@*":
+  "integrity" "sha512-xTE1E+YF4aWPJJeUzaZI5DRntlkY3+BCVJi0axFptnjGmAoWxkyREIh/XMrfxVLejwQxMCfDXdICo0VLxThrog=="
+  "resolved" "https://registry.npmjs.org/@types/webidl-conversions/-/webidl-conversions-7.0.0.tgz"
+  "version" "7.0.0"
+
+"@types/whatwg-url@^8.2.1":
+  "integrity" "sha512-FtQu10RWgn3D9U4aazdwIE2yzphmTJREDqNdODHrbrZmmMqI0vMheC/6NE/J1Yveaj8H+ela+YwWTjq5PGmuhA=="
+  "resolved" "https://registry.npmjs.org/@types/whatwg-url/-/whatwg-url-8.2.2.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "8.2.2"
   dependencies:
     "@types/node" "*"
@@ -1307,6 +1340,11 @@
     "file-uri-to-path" "1.0.0"
 
 "bowser@^2.11.0":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA=="
+  "resolved" "https://registry.npmjs.org/bowser/-/bowser-2.11.0.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "2.11.0"
 
 "boxen@^5.0.0":
@@ -1392,6 +1430,11 @@
     "@kurkle/color" "^0.3.0"
 
 "chokidar@^3.5.3":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw=="
+  "resolved" "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "3.5.3"
   dependencies:
     "anymatch" "~3.1.2"
@@ -1454,6 +1497,7 @@
 "convert-hrtime@^3.0.0":
   "version" "3.0.0"
 
+<<<<<<< HEAD
 "cookie@^0.4.0":
   "integrity" "sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA=="
   "resolved" "https://registry.npmjs.org/cookie/-/cookie-0.4.2.tgz"
@@ -1462,6 +1506,11 @@
 "create-require@^1.1.0":
   "version" "1.1.1"
 
+=======
+"create-require@^1.1.0":
+  "version" "1.1.1"
+
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
 "cross-spawn@^7.0.2", "cross-spawn@^7.0.3":
   "version" "7.0.3"
   dependencies:
@@ -1690,7 +1739,11 @@
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
 
+<<<<<<< HEAD
 "esbuild-windows-64@0.14.47":
+=======
+"esbuild-darwin-64@0.14.47":
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "0.14.47"
 
 "esbuild@0.14.47":
@@ -1928,6 +1981,11 @@
   "version" "2.0.6"
 
 "fast-xml-parser@4.0.11":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-4aUg3aNRR/WjQAcpceODG1C3x3lFANXRo8+1biqfieHmg9pyMt7qB4lQV/Ta6sJCTbA5vfD8fnA8S54JATiFUA=="
+  "resolved" "https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-4.0.11.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "4.0.11"
   dependencies:
     "strnum" "^1.0.5"
@@ -1980,6 +2038,11 @@
 
 "fs.realpath@^1.0.0":
   "version" "1.0.0"
+
+"fsevents@~2.3.2":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "version" "1.1.1"
@@ -2034,7 +2097,11 @@
 "get-tsconfig@^4.2.0":
   "version" "4.3.0"
 
+<<<<<<< HEAD
 "glob-parent@^5.1.2", "glob-parent@~5.1.2":
+=======
+"glob-parent@^5.1.2":
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "5.1.2"
   dependencies:
     "is-glob" "^4.0.1"
@@ -2181,6 +2248,11 @@
     "debug" "4"
 
 "ieee754@^1.1.13":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA=="
+  "resolved" "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "1.2.1"
 
 "ignore@^5.2.0":
@@ -2221,6 +2293,11 @@
     "side-channel" "^1.0.4"
 
 "ip@^2.0.0":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ=="
+  "resolved" "https://registry.npmjs.org/ip/-/ip-2.0.0.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "2.0.0"
 
 "is-arguments@^1.1.0", "is-arguments@^1.1.1":
@@ -2477,6 +2554,11 @@
   "version" "1.3.6"
 
 "memory-pager@^1.0.2":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg=="
+  "resolved" "https://registry.npmjs.org/memory-pager/-/memory-pager-1.5.0.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "1.5.0"
 
 "merge2@^1.3.0", "merge2@^1.4.1":
@@ -2491,7 +2573,11 @@
 "mimic-response@^1.0.0", "mimic-response@^1.0.1":
   "version" "1.0.1"
 
+<<<<<<< HEAD
 "minimatch@^3.0.4", "minimatch@^3.0.5", "minimatch@^3.1.2":
+=======
+"minimatch@^3.0.4", "minimatch@^3.0.5", "minimatch@^3.1.1", "minimatch@^3.1.2":
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "3.1.2"
   dependencies:
     "brace-expansion" "^1.1.7"
@@ -2519,12 +2605,22 @@
   "version" "1.0.4"
 
 "mongodb-connection-string-url@^2.5.4":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-WvTZlI9ab0QYtTYnuMLgobULWhokRjtC7db9LtcVfJ+Hsnyr5eo6ZtNAt3Ly24XZScGMelOcGtm7lSn0332tPQ=="
+  "resolved" "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.6.0.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "2.6.0"
   dependencies:
     "@types/whatwg-url" "^8.2.1"
     "whatwg-url" "^11.0.0"
 
 "mongodb@^4.13.0":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-+taZ/bV8d1pYuHL4U+gSwkhmDrwkWbH1l4aah4YpmpscMwgFBkufIKxgP/G7m87/NUuQzc2Z75ZTI7ZOyqZLbw=="
+  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.13.0.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "4.13.0"
   dependencies:
     "bson" "^4.7.0"
@@ -2803,6 +2899,11 @@
     "parse-ms" "^2.1.0"
 
 "prisma@*", "prisma@^4.8.1":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-ZMLnSjwulIeYfaU1O6/LF6PEJzxN5par5weykxMykS9Z6ara/j76JH3Yo2AH3bgJbPN4Z6NeCK9s5fDkzf33cg=="
+  "resolved" "https://registry.npmjs.org/prisma/-/prisma-4.8.1.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "4.8.1"
   dependencies:
     "@prisma/engines" "4.8.1"
@@ -2842,6 +2943,7 @@
     "minimist" "^1.2.0"
     "strip-json-comments" "~2.0.1"
 
+<<<<<<< HEAD
 "react-cookie@^4.1.1":
   "integrity" "sha512-ffn7Y7G4bXiFbnE+dKhHhbP+b8I34mH9jqnm8Llhj89zF4nPxPutxHT1suUqMeCEhLDBI7InYwf1tpaSoK5w8A=="
   "resolved" "https://registry.npmjs.org/react-cookie/-/react-cookie-4.1.1.tgz"
@@ -2852,11 +2954,15 @@
     "universal-cookie" "^4.0.0"
 
 "react-dom@^18.2.0", "react-dom@>=16", "react-dom@18.2.0":
+=======
+"react-dom@^18.2.0", "react-dom@18.2.0":
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "18.2.0"
   dependencies:
     "loose-envify" "^1.1.0"
     "scheduler" "^0.23.0"
 
+<<<<<<< HEAD
 "react-hot-toast@^2.4.0":
   "integrity" "sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA=="
   "resolved" "https://registry.npmjs.org/react-hot-toast/-/react-hot-toast-2.4.0.tgz"
@@ -2868,6 +2974,17 @@
   "version" "16.13.1"
 
 "react@^18.2.0", "react@>= 16.3.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@18.2.0":
+=======
+"react-icons@^4.7.1":
+  "integrity" "sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.7.1.tgz"
+  "version" "4.7.1"
+
+"react-is@^16.13.1":
+  "version" "16.13.1"
+
+"react@*", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.2.0":
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "18.2.0"
   dependencies:
     "loose-envify" "^1.1.0"
@@ -3222,6 +3339,11 @@
     "strip-bom" "^3.0.0"
 
 "tslib@^1.11.1":
+<<<<<<< HEAD
+=======
+  "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "1.14.1"
 
 "tslib@^1.8.1":
@@ -3341,9 +3463,19 @@
   "version" "3.0.1"
 
 "webidl-conversions@^7.0.0":
+<<<<<<< HEAD
   "version" "7.0.0"
 
 "whatwg-url@^11.0.0":
+=======
+  "integrity" "sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g=="
+  "resolved" "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-7.0.0.tgz"
+  "version" "7.0.0"
+
+"whatwg-url@^11.0.0":
+  "integrity" "sha512-RKT8HExMpoYx4igMiVMY83lN6UeITKJlBQ+vR/8ZJ8OCdSiN3RwCq+9gH0+Xzj0+5IrM6i4j/6LuvzbZIQgEcQ=="
+  "resolved" "https://registry.npmjs.org/whatwg-url/-/whatwg-url-11.0.0.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
   "version" "11.0.0"
   dependencies:
     "tr46" "^3.0.0"
