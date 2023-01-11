@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "mongodb": "^4.13.0",
     "chart.js": "^4.1.2",
-    "heroicons": "^2.0.13",
+    "mongodb": "^4.13.0",
     "next": "13.1.1",
     "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "vercel": "^28.11.0"
   },
   "devDependencies": {

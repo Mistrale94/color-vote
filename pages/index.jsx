@@ -21,9 +21,9 @@ export default function Home() {
         <h1 className="font-bold text-3xl mb-12">Code pin</h1>
 
         <form className='inline-grid w-9/12'>
-          <input type="text" placeholder='Code de la session' className='mb-8 border-b-2 w-full'></input>
-          <input type="text" placeholder='Prénom'  className='mb-12 border-b-2 w-full'></input>
-          <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold">Rejoindre la session</button>
+          <input type="text" placeholder='Code de la session' className='mb-8 border-b-2 w-full outline-0'></input>
+          <input type="text" placeholder='Prénom'  className='mb-12 border-b-2 w-full outline-0'></input>
+          <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold outline-0">Rejoindre la session</button>
         </form>
 
       </main>

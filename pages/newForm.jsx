@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 // import clientPromise from '../lib/mongodb'
 import { useEffect, useState } from 'react'
-// import { PlusCircleIcon } from "@heroicons/24/outline";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 
 export default function NewForm({isConnected}) {
@@ -22,12 +22,12 @@ export default function NewForm({isConnected}) {
         <h1 className="font-bold text-3xl mb-12">Création d'un questionnaire</h1>
 
         <form className='inline-grid w-9/12'>
-          <input type="text" placeholder='Titre du questionnaire' className='mb-8 border-b-2 w-full'></input>
-          <input type="number" placeholder='Nombre de participant'  className='mb-12 border-b-2 w-full'></input>
-          <input type="text" placeholder='Question' className='mb-8 border-b-2 w-full'></input>
+          <input type="text" placeholder='Titre du questionnaire' className='mb-8 border-b-2 w-full outline-0'></input>
+          <input type="number" placeholder='Nombre de participant'  className='mb-12 border-b-2 w-full outline-0'></input>
+          <input type="text" placeholder='Question' className='mb-8 border-b-2 w-full outline-0'></input>
           <input type="file" placeholder='Nombre de participant' accept="image/png, image/jpeg, image/jpg"  className='mb-12 border-b-2 w-full'></input>
-           <a href="#">{/*<PlusCircleIcon class="h-6 h-6 text-gray-500" /> */} Ajouter une question</a>
-          <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold">Créer le formulaire</button>
+            <a href="#" className='mb-8 flex justify-center items-center'><AiOutlinePlusCircle className=" text-2xl mr-2"/> Ajouter une question</a> 
+          <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold mb-12">Créer le formulaire</button>
         </form>
       </main>
     </div>
