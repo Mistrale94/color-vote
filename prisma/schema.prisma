@@ -8,14 +8,46 @@ datasource db {
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
 }
 
 model User {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  email     String?  @unique
+  email     String  @unique
+  lastName  String
+  firstName String
+  password  String 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Theme {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String
-  birthYear Int
+  pincode   Int
+  affirmations Affirmation[]
+  answers   Answer[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Affirmation {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  affirmation String
+  theme Theme @relation(fields: [theme_id], references: [id])
+  theme_id String @db.ObjectId
+  answers   Answer[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Answer {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  answer   Int
+  username String
+  theme Theme @relation(fields: [theme_id], references: [id])
+  theme_id String @db.ObjectId
+  affirmation Affirmation @relation(fields: [affirmation_id], references: [id])
+  affirmation_id String @db.ObjectId
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

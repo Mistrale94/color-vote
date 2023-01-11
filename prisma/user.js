@@ -2,7 +2,7 @@ import prisma from './prisma'
 
 // READ
 export const getAllUsers = async () => {
-  const users = await prisma.user.findMany({})
+  const users = await prisma.user.findMany()
   return users
 }
 
@@ -14,12 +14,13 @@ export const getUser = async id => {
 }
 
 // CREATE
-export const createUser = async (email, name, birthYear) => {
+export const createUser = async (email, lastName, firstName, password) => {
   const user = await prisma.user.create({
     data: {
       email,
-      name,
-      birthYear
+      firstName,
+      lastName,
+      password
     }
   })
   return user

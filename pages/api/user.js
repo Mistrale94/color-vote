@@ -23,8 +23,8 @@ import {
         }
         case 'POST': {
           // Create a new user
-          const { email, name, birthYear } = req.body
-          const user = await createUser(email, name, birthYear)
+          const { email, lastName, password, firstName } = req.body
+          const user = await createUser(email, lastName, password, firstName)
           return res.json(user)
         }
         case 'PUT': {
