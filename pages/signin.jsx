@@ -2,8 +2,72 @@ import React from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
+import { useCookies } from 'react-cookie';
+import { useRouter } from 'next/router';
 
-const signin = () => {
+export default function Signin() {
+
+  const [inputedUser, setInputedUser] = useState({
+    email: '',
+    password: ''
+  });
+  const router = useRouter();
+  const [cookies, setCookie, removeCookie] = useCookies();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleConnectUser = async e => {
+    e.preventDefault();
+    try {
+      toast.loading('Connexion en cours...');
+      if (
+        !inputedUser.email ||
+        !inputedUser.email.includes('@') ||
+        !inputedUser.password
+      ) {
+        toast.remove();
+        toast.error('Informations incorrectes');
+      } else {
+        //POST form values
+        const res = await fetch('/api/signin', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: inputedUser.email,
+            password: inputedUser.password
+          })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          setCookie('user', JSON.stringify(data), {
+            path: '/',
+            maxAge: 2592000,
+            sameSite: true,
+            secure: true
+          });
+          toast.remove();
+          toast.success('Connecté');
+          router.push('/');
+        } else {
+          toast.remove();
+          toast.error('Erreur lors de la connexion au compte');
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    if (cookies.user) {
+      router.push('/');
+    }
+  }, [cookies.user, router]);
+
   return (
     <div>
       <Head>
@@ -18,9 +82,44 @@ const signin = () => {
         </figure>
         <h1 className='font-bold text-3xl mb-12'>Se connecter</h1>
 
-        <form className='inline-grid w-9/12'>
-          <input type="text" placeholder='Adresse email' className='mb-8 border-b-2 w-full'></input>
-          <input type="text" placeholder='Mot de passe' className='mb-12 border-b-2 w-full'></input>
+        <form method='POST' onSubmit={handleConnectUser} className='inline-grid w-9/12'>
+          <input 
+            type="text"
+            placeholder='Adresse email'
+            className='mb-8 border-b-2 w-full'
+            value={inputedUser.email || ''}
+            onChange={e =>
+              setInputedUser({ ...inputedUser, email: e.target.value })
+            }
+          >
+          </input>
+          <div>
+            <input 
+              type="text"
+              placeholder='Mot de passe' 
+              className='mb-12 border-b-2 w-full'
+              value={inputedUser.password || ''}
+              minLength={8}
+              onChange={e =>
+                setInputedUser({
+                  ...inputedUser,
+                  password: e.target.value
+                })
+              }
+            >
+            </input>
+            <div className="toggle">
+              <input
+                className="toggle-state"
+                type="checkbox"
+                name="check"
+                value="check"
+                onClick={() => setShowPassword(!showPassword)}
+              />
+              <div className="indicator"></div>
+            </div>
+          </div>
+          
           <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold mb-2">Se connecter</button>
           <p className='text-sm ml-2 hover:text-cyan-500 cursor-pointer mb-12'>Mot de passe oublié ?</p>
 
@@ -45,5 +144,3 @@ const signin = () => {
     </div>
   );
 };
-
-export default signin;
