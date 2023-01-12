@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from "react";
 import Router from 'next/router';
-import { useEffect, useState } from 'react'
 import { AiOutlinePlusCircle } from "react-icons/ai";
 // import { PlusCircleIcon } from "@heroicons/24/outline";
 
