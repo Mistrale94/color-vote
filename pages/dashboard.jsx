@@ -1,11 +1,21 @@
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Questionnaire from '../components/questionnaire';
 import Footer from '../components/footer';
 
-const dashboard = () => {
+export default function dashboard() {
+
+    const [themes, setThemes] = useState([]);
+
+    useEffect(() => {
+      fetch('/api/theme/fetchTheme')
+        .then(res => res.json())
+        .then(data => setThemes(data));
+    }, []);
+
     return (
+        
         <>
             <Head>
                 <title>Dashboard</title>
@@ -16,14 +26,17 @@ const dashboard = () => {
             <div className='px-8 text-center'>
                 <h1 className='sm:text-left sm:pl-4 pl-0 text-center text-3xl pt-8 pb-14'>Mes questionnaires</h1>
                 <div className='flex flex-wrap justify-center sm:justify-between'>
-                    <Questionnaire/>
-                    <Questionnaire/>
-                    <Questionnaire/>
+                    <div>
+                        {themes.map(theme => (
+                            <Questionnaire
+                                key={theme.id}
+                                data={theme}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
             <Footer/>
         </>
     );
 };
-
-export default dashboard;
