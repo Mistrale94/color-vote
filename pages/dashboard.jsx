@@ -13,8 +13,14 @@ const dashboard = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar/>
-                <h1 className='text-2xl px-4 py-8'>Mes questionnaires</h1>
-            <Questionnaire/>
+            <div className='px-8 text-center'>
+                <h1 className='sm:text-left sm:pl-4 pl-0 text-center text-3xl pt-8 pb-14'>Mes questionnaires</h1>
+                <div className='flex flex-wrap justify-center sm:justify-between'>
+                    <Questionnaire/>
+                    <Questionnaire/>
+                    <Questionnaire/>
+                </div>
+            </div>
             <Footer/>
         </>
     );
