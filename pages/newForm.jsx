@@ -1,39 +1,59 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useState } from "react";
-import Router from 'next/router';
+import React, { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
+import { useRouter } from "next/router";
+import toast from "react-hot-toast";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 // import { PlusCircleIcon } from "@heroicons/24/outline";
 
 
 export default function NewForm() {
 
-  const [name, setName] = useState("");
-  const [attendees, setAttendees] = useState("");
-  const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
+  const [cookies] = useCookies(['user']);
+  const [inputedUser, setInputedUser] = useState({
+    name: '',
+    attendees: ''
+  });
+  const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = async e => {
-      e.preventDefault();
-      setError("");
-      setMessage("");
-      if (name && attendees) {
-          try {
-              const body = { name, attendees };
-              await fetch(`/api/theme`, {
-                  method: "POST",
-                  headers: {"Content-Type": "application/json"},
-                  body: JSON.stringify(body),
-              });
-              await Router.push("/");
-          } catch (error) {
-              console.error(error);
-          }
+    const handleAddTheme = async e => {
+    e.preventDefault();
+    setLoading(true);
+    if (!currentUser) {
+      toast.error('Vous devez être connecté pour poster un message');
+      router.push('/auth/');
+    } else {
+      const formData = new FormData();
+      formData.append('name', inputedUser.name);
+      formData.append('attendees', inputedUser.attendees);
+      formData.append('user', currentUser?.id);
+      const res = await fetch(`/api/theme/create`, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (res.ok) {
+        setLoading(false);
+        router.push('/');
+        toast.success('Theme créé avec succès');
       } else {
-          setError("All fields are required");
-          return;
+        setLoading(false);
+        toast.error('Veuillez remplir tous les champs');
       }
+    }
   };
+
+  useEffect(() => {
+    if (cookies.user) {
+      setCurrentUser(cookies.user);
+    } else {
+      router.push('/');
+      toast.error('Vous devez être connecté pour accéder à cette page');
+    }
+  }, [cookies.user, router]);
 
   return (
     <div>
@@ -49,21 +69,21 @@ export default function NewForm() {
         </figure>
         <h1 className="font-bold text-3xl mb-12">Création d'un questionnaire</h1>
 
-        <form onSubmit={handleSubmit} className='inline-grid w-9/12'>
+        <form onSubmit={handleAddTheme} className='inline-grid w-9/12'>
           <input
             type="text"
             placeholder='Titre du questionnaire'
             className='mb-8 border-b-2 w-full'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={inputedUser.name}
+            onChange={e => setInputedUser({ ...inputedUser, name: e.target.value })}
           >
           </input>
           <input
             type="number"
             placeholder='Nombre de participant'
             className='mb-12 border-b-2 w-full'
-            value={attendees}
-            onChange={(e) => setAttendees(e.target.value)}
+            value={inputedUser.attendees}
+            onChange={e => setInputedUser({ ...inputedUser, attendees: e.target.value })}
           >
           </input>
             <input
