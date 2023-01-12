@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from "react";
 import Router from 'next/router';
+import { useEffect, useState } from 'react'
+import { AiOutlinePlusCircle } from "react-icons/ai";
 // import { PlusCircleIcon } from "@heroicons/24/outline";
 
 
@@ -33,7 +35,7 @@ export default function NewForm() {
           setError("All fields are required");
           return;
       }
-  }
+  };
 
   return (
     <div>
@@ -82,17 +84,3 @@ export default function NewForm() {
     </div>
   )
 }
-
-// export async function getServerSideProps(context) {
-//   try{
-//     await clientPromise
-//     return {
-//       props: { isConnected: true },
-//     }
-//   } catch (e) {
-//     console.error(e);
-//     return {
-//       props: { isConnected: false },
-//     }
-//   }
-// }

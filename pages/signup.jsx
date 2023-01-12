@@ -96,7 +96,7 @@ export default function Signup() {
           <input
             type="text"
             placeholder='Nom'
-            className='mb-8 border-b-2 w-full'
+            className='mb-8 border-b-2 w-full outline-0'
             value={inputedUserSignup.lastName || ''}
             onChange={e =>
               setInputedUserSignup({
@@ -109,7 +109,7 @@ export default function Signup() {
           <input 
             type="text"
             placeholder='Prénom'
-            className='mb-8 border-b-2 w-full'
+            className='mb-8 border-b-2 w-full outline-0'
             value={inputedUserSignup.firstName || ''}
             onChange={e =>
               setInputedUserSignup({
@@ -122,7 +122,7 @@ export default function Signup() {
           <input
             type="email"
             placeholder='Adresse email'
-            className='mb-8 border-b-2 w-full'
+            className='mb-8 border-b-2 w-full outline-0'
             value={inputedUserSignup.email || ''}
             onChange={e =>
               setInputedUserSignup({
@@ -136,7 +136,7 @@ export default function Signup() {
             <input
               type={`${showPassword ? 'text' : 'password'}`}
               placeholder='Mot de passe'
-              className='mb-12 border-b-2 w-full'
+              className='mb-12 border-b-2 w-full outline-0'
               value={inputedUserSignup.password || ''}
               minLength={8}
               onChange={e =>
@@ -147,14 +147,16 @@ export default function Signup() {
               }
             >
             </input>
-            <div className="toggle">
+            <div className="toggle mb-8">
               <input
-                className="toggle-state"
+                id="show"
+                className="toggle-state mr-2 outline-0"
                 type="checkbox"
                 name="check"
                 value="check"
                 onClick={() => setShowPassword(!showPassword)}
               />
+              <label for="show">Afficher le mot de passe</label>
               <div className="indicator"></div>
             </div>
           </div>
@@ -171,7 +173,7 @@ export default function Signup() {
 
 
 
-          <button type="submit" className="border-solid border-2 border-black mb-4 p-3 rounded-full  font-bold">S'inscrire avec Google</button>
+          <button type="submit" className="border-solid border-2 border-black mb-8 p-3 rounded-full mt-4 font-bold">S'inscrire avec Google</button>
         </form>
 
       </main>

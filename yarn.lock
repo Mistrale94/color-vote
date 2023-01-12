@@ -816,6 +816,20 @@
 "@next/swc-win32-x64-msvc@13.1.1":
   "integrity" "sha512-mVF0/3/5QAc5EGVnb8ll31nNvf3BWpPY4pBb84tk+BfQglWLqc5AC9q1Ht/YMWiEgs8ALNKEQ3GQnbY0bJF2Gg=="
   "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.1.1.tgz"
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+"@next/swc-win32-x64-msvc@13.1.1":
+  "integrity" "sha512-mVF0/3/5QAc5EGVnb8ll31nNvf3BWpPY4pBb84tk+BfQglWLqc5AC9q1Ht/YMWiEgs8ALNKEQ3GQnbY0bJF2Gg=="
+  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.1.1.tgz"
+=======
+"@next/swc-darwin-x64@13.1.1":
+  "integrity" "sha512-qWr9qEn5nrnlhB0rtjSdR00RRZEtxg4EGvicIipqZWEyayPxhUu6NwKiG8wZiYZCLfJ5KWr66PGSNeDMGlNaiA=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-13.1.1.tgz"
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
+>>>>>>> c50ec381952702596966f6018c8b174106ae2dab
+>>>>>>> f58d42ea92bb737f4d0237f646a71ac04c6394c6
   "version" "13.1.1"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -1190,9 +1204,18 @@
     "ansi-styles" "^4.1.0"
     "supports-color" "^7.1.0"
 
-"chart.js@^4.1.2":
+<<<<<<< HEAD
+"chart.js@^4.1.1", "chart.js@^4.1.2":
   "integrity" "sha512-9L1w6WLPq6ztiWVVOYtDtpo0CUsBKDWPrUEdwChAyzczaikqeSwNKEv3QpJ7EO4ICcLSi6UDVhgvcnUhRJidRA=="
   "resolved" "https://registry.npmjs.org/chart.js/-/chart.js-4.1.2.tgz"
+=======
+"chart.js@^4.1.2":
+<<<<<<< HEAD
+  "integrity" "sha512-9L1w6WLPq6ztiWVVOYtDtpo0CUsBKDWPrUEdwChAyzczaikqeSwNKEv3QpJ7EO4ICcLSi6UDVhgvcnUhRJidRA=="
+  "resolved" "https://registry.npmjs.org/chart.js/-/chart.js-4.1.2.tgz"
+=======
+>>>>>>> c50ec381952702596966f6018c8b174106ae2dab
+>>>>>>> f58d42ea92bb737f4d0237f646a71ac04c6394c6
   "version" "4.1.2"
   dependencies:
     "@kurkle/color" "^0.3.0"
@@ -1369,6 +1392,127 @@
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.284.tgz"
   "version" "1.4.284"
 
+<<<<<<< HEAD
+=======
+"emoji-regex@^8.0.0":
+  "version" "8.0.0"
+
+"emoji-regex@^9.2.2":
+  "version" "9.2.2"
+
+"end-of-stream@^1.1.0":
+  "version" "1.4.4"
+  dependencies:
+    "once" "^1.4.0"
+
+"enhanced-resolve@^5.10.0":
+  "version" "5.12.0"
+  dependencies:
+    "graceful-fs" "^4.2.4"
+    "tapable" "^2.2.0"
+
+"es-abstract@^1.19.0", "es-abstract@^1.20.4":
+  "version" "1.21.0"
+  dependencies:
+    "call-bind" "^1.0.2"
+    "es-set-tostringtag" "^2.0.0"
+    "es-to-primitive" "^1.2.1"
+    "function-bind" "^1.1.1"
+    "function.prototype.name" "^1.1.5"
+    "get-intrinsic" "^1.1.3"
+    "get-symbol-description" "^1.0.0"
+    "globalthis" "^1.0.3"
+    "gopd" "^1.0.1"
+    "has" "^1.0.3"
+    "has-property-descriptors" "^1.0.0"
+    "has-proto" "^1.0.1"
+    "has-symbols" "^1.0.3"
+    "internal-slot" "^1.0.4"
+    "is-array-buffer" "^3.0.0"
+    "is-callable" "^1.2.7"
+    "is-negative-zero" "^2.0.2"
+    "is-regex" "^1.1.4"
+    "is-shared-array-buffer" "^1.0.2"
+    "is-string" "^1.0.7"
+    "is-typed-array" "^1.1.10"
+    "is-weakref" "^1.0.2"
+    "object-inspect" "^1.12.2"
+    "object-keys" "^1.1.1"
+    "object.assign" "^4.1.4"
+    "regexp.prototype.flags" "^1.4.3"
+    "safe-regex-test" "^1.0.0"
+    "string.prototype.trimend" "^1.0.6"
+    "string.prototype.trimstart" "^1.0.6"
+    "typed-array-length" "^1.0.4"
+    "unbox-primitive" "^1.0.2"
+    "which-typed-array" "^1.1.9"
+
+"es-get-iterator@^1.1.2":
+  "version" "1.1.2"
+  dependencies:
+    "call-bind" "^1.0.2"
+    "get-intrinsic" "^1.1.0"
+    "has-symbols" "^1.0.1"
+    "is-arguments" "^1.1.0"
+    "is-map" "^2.0.2"
+    "is-set" "^2.0.2"
+    "is-string" "^1.0.5"
+    "isarray" "^2.0.5"
+
+"es-set-tostringtag@^2.0.0":
+  "version" "2.0.1"
+  dependencies:
+    "get-intrinsic" "^1.1.3"
+    "has" "^1.0.3"
+    "has-tostringtag" "^1.0.0"
+
+"es-shim-unscopables@^1.0.0":
+  "version" "1.0.0"
+  dependencies:
+    "has" "^1.0.3"
+
+"es-to-primitive@^1.2.1":
+  "version" "1.2.1"
+  dependencies:
+    "is-callable" "^1.1.4"
+    "is-date-object" "^1.0.1"
+    "is-symbol" "^1.0.2"
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+"esbuild-windows-64@0.14.47":
+=======
+"esbuild-darwin-64@0.14.47":
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
+  "version" "0.14.47"
+
+>>>>>>> c50ec381952702596966f6018c8b174106ae2dab
+"esbuild@0.14.47":
+  "version" "0.14.47"
+  optionalDependencies:
+    "esbuild-android-64" "0.14.47"
+    "esbuild-android-arm64" "0.14.47"
+    "esbuild-darwin-64" "0.14.47"
+    "esbuild-darwin-arm64" "0.14.47"
+    "esbuild-freebsd-64" "0.14.47"
+    "esbuild-freebsd-arm64" "0.14.47"
+    "esbuild-linux-32" "0.14.47"
+    "esbuild-linux-64" "0.14.47"
+    "esbuild-linux-arm" "0.14.47"
+    "esbuild-linux-arm64" "0.14.47"
+    "esbuild-linux-mips64le" "0.14.47"
+    "esbuild-linux-ppc64le" "0.14.47"
+    "esbuild-linux-riscv64" "0.14.47"
+    "esbuild-linux-s390x" "0.14.47"
+    "esbuild-netbsd-64" "0.14.47"
+    "esbuild-openbsd-64" "0.14.47"
+    "esbuild-sunos-64" "0.14.47"
+    "esbuild-windows-32" "0.14.47"
+    "esbuild-windows-64" "0.14.47"
+    "esbuild-windows-arm64" "0.14.47"
+
+>>>>>>> f58d42ea92bb737f4d0237f646a71ac04c6394c6
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
   "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
@@ -1618,6 +1762,7 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
+<<<<<<< HEAD
 "ftp@^0.3.10":
   "integrity" "sha512-faFVML1aBx2UoDStmLwv2Wptt4vw5x03xxX172nhA5Y5HBshW5JweqQ2W4xL4dezQTG8inJsuYcpPHHU3X5OTQ=="
   "resolved" "https://registry.npmjs.org/ftp/-/ftp-0.3.10.tgz"
@@ -1626,6 +1771,8 @@
     "readable-stream" "1.1.x"
     "xregexp" "2.0.0"
 
+=======
+>>>>>>> f58d42ea92bb737f4d0237f646a71ac04c6394c6
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -2348,9 +2495,20 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
+<<<<<<< HEAD
 "react@*", "react@^18.2.0", "react@>= 16", "react@>= 16.3.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
+=======
+<<<<<<< HEAD
+"react@*", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.2.0":
+  "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
+  "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
+=======
+"react@*", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.2.0":
+>>>>>>> 2f890faa97e6d78adb20df15b483c454f673bff7
+>>>>>>> c50ec381952702596966f6018c8b174106ae2dab
+>>>>>>> f58d42ea92bb737f4d0237f646a71ac04c6394c6
   "version" "18.2.0"
   dependencies:
     "loose-envify" "^1.1.0"
