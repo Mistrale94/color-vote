@@ -1,35 +1,21 @@
 import { PrismaClient } from ".prisma/client";
 
-export const config = {
-    api: {
-      bodyParser: false
-    }
-};
-
 async function createTheme(req, res) {
-    console.log('avant')
-    try{
-        const prisma = new PrismaClient();
-    
-        const { name, attendees, user } = req.body;
+    const prisma = new PrismaClient();
 
-        const randomNumber = Math.floor(Math.random() * 10000) + 1;
-
-        const newTheme = await prisma.theme.create({
-            data: {
-            name: name,
-            attendees: attendees,
+    const { name, attendees } = req.body;
+    const user = req.body.user;
+    const randomNumber = Math.floor(Math.random() * 10000) + 1;
+    const newTheme = await prisma.theme.create({
+        data: {
+            name,
+            attendees,
             pincode: randomNumber,
-            user_id: user,
-            },
-        });
-            
-        res.status(200).json(newTheme);
+            user_id: user
+        },
+    });
 
-    } catch (e) {
-        console.log(e);
-    }
-
+    res.status(200).json(newTheme);
 }
 
 export default createTheme;

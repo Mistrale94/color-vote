@@ -26,13 +26,16 @@ export default function NewForm() {
       toast.error('Vous devez être connecté pour poster un message');
       router.push('/auth/');
     } else {
-      const formData = new FormData();
-      formData.append('name', inputedUser.name);
-      formData.append('attendees', inputedUser.attendees);
-      formData.append('user', currentUser?.id);
       const res = await fetch(`/api/theme/create`, {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name : inputedUser.name,
+          attendees : inputedUser.attendees,
+          user : currentUser?.id
+        })
       });
 
       if (res.ok) {
