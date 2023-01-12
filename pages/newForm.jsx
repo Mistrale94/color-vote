@@ -18,9 +18,8 @@ export default function NewForm() {
       setError("");
       setMessage("");
       if (name && attendees) {
-          // send a request to the server.
           try {
-              const body = { name, attendees, published: false };
+              const body = { name, attendees };
               await fetch(`/api/theme`, {
                   method: "POST",
                   headers: {"Content-Type": "application/json"},

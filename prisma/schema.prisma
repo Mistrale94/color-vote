@@ -23,10 +23,10 @@ model User {
 
 model Theme {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  name      String?
-  pincode   Int?
+  name      String
+  pincode   Int
   image     String?
-  attendees String?
+  attendees String
   // user      User? @relation(fields: [user_id], references: [id])
   // user_id   String? @db.ObjectId
   affirmations Affirmation[]
