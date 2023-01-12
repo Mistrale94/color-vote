@@ -132,7 +132,6 @@ export default function Chartbar() {
 
   return (
     <div className="Chartbar">
-      <span>Chart.js Demo</span>
       <canvas id="myChart" ref={canvasEl} height="100" />
     </div>
   );
