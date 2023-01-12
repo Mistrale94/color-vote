@@ -1,11 +1,40 @@
 import Head from 'next/head'
 import Image from 'next/image'
-// import clientPromise from '../lib/mongodb'
-import { useEffect, useState } from 'react'
+import React, { useState } from "react";
+import Router from 'next/router';
 import { AiOutlinePlusCircle } from "react-icons/ai";
+// import { PlusCircleIcon } from "@heroicons/24/outline";
 
 
-export default function NewForm({isConnected}) {
+export default function NewForm() {
+
+  const [name, setName] = useState("");
+  const [attendees, setAttendees] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async e => {
+      e.preventDefault();
+      setError("");
+      setMessage("");
+      if (name && attendees) {
+          // send a request to the server.
+          try {
+              const body = { name, attendees, published: false };
+              await fetch(`/api/theme`, {
+                  method: "POST",
+                  headers: {"Content-Type": "application/json"},
+                  body: JSON.stringify(body),
+              });
+              await Router.push("/");
+          } catch (error) {
+              console.error(error);
+          }
+      } else {
+          setError("All fields are required");
+          return;
+      }
+  };
 
   return (
     <div>
@@ -21,29 +50,36 @@ export default function NewForm({isConnected}) {
         </figure>
         <h1 className="font-bold text-3xl mb-12">Création d'un questionnaire</h1>
 
-        <form className='inline-grid w-9/12'>
-          <input type="text" placeholder='Titre du questionnaire' className='mb-8 border-b-2 w-full outline-0'></input>
-          <input type="number" placeholder='Nombre de participant'  className='mb-12 border-b-2 w-full outline-0'></input>
-          <input type="text" placeholder='Question' className='mb-8 border-b-2 w-full outline-0'></input>
-          <input type="file" placeholder='Nombre de participant' accept="image/png, image/jpeg, image/jpg"  className='mb-12 border-b-2 w-full'></input>
-            <a href="#" className='mb-8 flex justify-center items-center'><AiOutlinePlusCircle className=" text-2xl mr-2"/> Ajouter une question</a> 
-          <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold mb-12">Créer le formulaire</button>
+        <form onSubmit={handleSubmit} className='inline-grid w-9/12'>
+          <input
+            type="text"
+            placeholder='Titre du questionnaire'
+            className='mb-8 border-b-2 w-full'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          >
+          </input>
+          <input
+            type="number"
+            placeholder='Nombre de participant'
+            className='mb-12 border-b-2 w-full'
+            value={attendees}
+            onChange={(e) => setAttendees(e.target.value)}
+          >
+          </input>
+            <input
+              type="file"
+              placeholder='Nombre de participant'
+              accept="image/png, image/jpeg, image/jpg"
+              className='mb-12 border-b-2 w-full'
+            >
+            </input>
+          <a href="#">{/*<PlusCircleIcon class="h-6 h-6 text-gray-500" /> */} Ajouter une question</a>
+          <button type='submit' className="bg-cyan-500 p-3 rounded-full text-white font-bold">
+            <span>Créer un formulaire</span>
+          </button>
         </form>
       </main>
     </div>
   )
 }
-
-// export async function getServerSideProps(context) {
-//   try{
-//     await clientPromise
-//     return {
-//       props: { isConnected: true },
-//     }
-//   } catch (e) {
-//     console.error(e);
-//     return {
-//       props: { isConnected: false },
-//     }
-//   }
-// }
