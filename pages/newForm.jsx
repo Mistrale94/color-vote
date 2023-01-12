@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { AiOutlinePlusCircle } from "react-icons/ai";
 
 
-export default function NewForm({isConnected}) {
+export default function NewForm() {
 
   return (
     <div>
@@ -33,17 +33,3 @@ export default function NewForm({isConnected}) {
     </div>
   )
 }
-
-// export async function getServerSideProps(context) {
-//   try{
-//     await clientPromise
-//     return {
-//       props: { isConnected: true },
-//     }
-//   } catch (e) {
-//     console.error(e);
-//     return {
-//       props: { isConnected: false },
-//     }
-//   }
-// }

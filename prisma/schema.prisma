@@ -43,7 +43,8 @@ model Affirmation {
 model Answer {
   id       String   @id @default(auto()) @map("_id") @db.ObjectId
   answer   Int
-  username String
+  firstname String
+  lastname String
   theme Theme @relation(fields: [theme_id], references: [id])
   theme_id String @db.ObjectId
   affirmation Affirmation @relation(fields: [affirmation_id], references: [id])

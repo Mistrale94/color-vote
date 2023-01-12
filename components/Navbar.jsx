@@ -8,6 +8,7 @@ const Navbar = () => {
         <div className='flex items-center justify-between p-2'>
             <Image src="/image/logo.png" width={40} height={40} alt="Logo"/>
             <div className='flex space-x-2'>
+                
                 <AiFillInfoCircle className='text-2xl'/>
                 <AiOutlinePlusCircle className='text-2xl'/>
                 <IoExitOutline className='text-2xl'/>
