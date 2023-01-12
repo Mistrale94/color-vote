@@ -15,15 +15,20 @@ model User {
   email     String  @unique
   lastName  String
   firstName String
-  password  String 
+  password  String
+  // themes    Theme[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Theme {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  name      String
-  pincode   Int
+  name      String?
+  pincode   Int?
+  image     String?
+  attendees String?
+  // user      User? @relation(fields: [user_id], references: [id])
+  // user_id   String? @db.ObjectId
   affirmations Affirmation[]
   answers   Answer[]
   createdAt DateTime @default(now())
