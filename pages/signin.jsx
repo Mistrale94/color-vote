@@ -76,7 +76,8 @@ export default function Signin() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='text-center'>
+      <div className="flex justify-center">
+      <main className='text-center w-full sm:w-1/2 lg:w-1/3'>
         <figure>
           <Image src="/image/logo.png" width={250} height={250} alt="Logo" className="mx-auto"/>
         </figure>
@@ -130,7 +131,7 @@ export default function Signin() {
               <div
                 className="leading-none px-2 inline-block text-sm text-black tracking-wide font-medium bg-white transform translate-y-1/2"
               >
-                Or sign up
+                Ou s'inscrire
               </div>
           </div>
 
@@ -141,6 +142,7 @@ export default function Signin() {
         </form>
 
       </main>
+      </div>
     </div>
   );
 };

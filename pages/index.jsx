@@ -4,77 +4,47 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 // import clientPromise from '../lib/mongodb'
 import { useEffect, useState } from 'react'
-import io from "socket.io-client";
+import io from "Socket.IO-client";
+
+import { useRouter } from 'next/router';
+
 
 let socket;
 
 const Home = () => {
-
+  const router = useRouter();
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
+  const [pincode, setPincode] = useState('');
   const [allConnected, setAllConnected] = useState([]);
-  const [newUser, setNewuser] = useState('');
+  const [newUser, setNewUser] = useState('');
+ 
 
-  // useEffect(() => socketInitializer(), [])
-
-  // const socketInitializer = async () => {
-  //   await fetch('/api/socket')
-  //   socket = io()
-
-  //   // socket.on('connect', () => {
-  //   //   console.log('connected')
-  //   // })
-
-  //   socket.on('connected', (data) => {
-  //     setAllConnected((pre)=> [...pre, data]);
-  //   })
-  // }
-
-  // function handleSubmit(e){
-  //   e.preventDefault();
-  //   socket.emit("connect_user",{
-  //     firstname,
-  //     lastname
-  //   })
-  //   setFirstname('');
-  //   setLastname('');
-
-
-  // }
 
   useEffect(() => {
     socketInitializer();
-
-    // return () => {
-    //   socket.disconnect();
-    // };
   }, []);
 
-  async function socketInitializer() {
+  const socketInitializer = async () => {
     await fetch("/api/socket");
 
     socket = io();
 
-    socket.on("receive-connect", (data) => {
-      setAllConnected((pre) => [...pre, data]);
-    });
-
-    socket.on('connected_user', obj =>{
-      setNewuser(obj);
+    socket.on('join-room', obj =>{
+      setNewUser(obj);
+        router.push('/quizAnswer')
     })
+
   }
 
+  
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('socket function handle submit work')
-    socket.emit("send-connect", {
+      socket.emit("send-connect", {
+      pincode,
       firstname,
       lastname
     })
-    // setFirstname('');
-    // setLastname('');
-
-
   }
 
   return (
@@ -87,25 +57,19 @@ const Home = () => {
 
       <Navbar />
 
-      <main className="text-center">
+      <div className="flex justify-center">
+        <main className="text-center w-full sm:w-1/2 lg:w-1/3">
 
-      {/* <div>
-          {allConnected.map(({
-            firstname, lastname
-          }, index) => (
-            <p key={index}>{firstname} {lastname}</p>
-          ))}
-        </div> */}
-        {newUser ? (
-          <div>{newUser.firstname}</div>
-        ):(
-          'Aucun'
-        )}
+          {newUser ? (
+            <div>{newUser.firstname}</div>
+          ):(
+            ''
+          )}
 
-        <figure>
-          <Image src="/image/logo.png" width={250} height={250} alt="Logo" className="mx-auto" />
-        </figure>
-        <h1 className="font-bold text-3xl mb-12">Code pin</h1>
+          <figure>
+            <Image src="/image/logo.png" width={250} height={250} alt="Logo" className="mx-auto" />
+          </figure>
+          <h1 className="font-bold text-3xl mb-12">Code pin</h1>
 
         <form className='inline-grid w-9/12' onSubmit={handleSubmit}>
           <input type="text" placeholder='Code de la session' className='mb-8 border-b-2 w-full outline-0'></input>
@@ -114,7 +78,8 @@ const Home = () => {
           <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold outline-0">Rejoindre la session</button>
         </form>
 
-      </main>
+        </main>
+      </div>
 
       <Footer />
 
