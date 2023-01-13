@@ -63,7 +63,8 @@ export default function NewForm() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-center">
+      <div className="flex justify-center">
+      <main className="text-center w-full sm:w-1/2 lg:w-1/3">
         <figure>
           <Image src="/image/logo.png" width={250} height={250} alt="Logo" className="mx-auto" />
         </figure>
@@ -99,6 +100,7 @@ export default function NewForm() {
           </button>
         </form>
       </main>
+      </div>
     </div>
   )
 }

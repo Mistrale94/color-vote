@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Questionnaire from '../components/questionnaire';
+import LaunchQuestionnaire from '../components/LaunchQuestionnaire';
 import Footer from '../components/footer';
 
 const dashboard = () => {
@@ -17,7 +18,7 @@ const dashboard = () => {
                 <h1 className='sm:text-left sm:pl-4 pl-0 text-center text-3xl pt-8 pb-14'>Mes questionnaires</h1>
                 <div className='flex flex-wrap justify-center sm:justify-between'>
                     <Questionnaire/>
-                    <Questionnaire/>
+                    <LaunchQuestionnaire/>
                     <Questionnaire/>
                 </div>
             </div>

@@ -4,30 +4,6 @@ import Chart from "chart.js/auto";
 export default function Chartbar() {
   const canvasEl = useRef(null);
 
-  const colors = {
-    darkGreen: {
-      default: "#6AB04C",
-    },
-    green: {
-      default: "#BADC58",
-    },
-    orange: {
-        default: "#F0932B",
-      },
-    red: {
-        default: "#FF7979",
-    },
-    darkRed: {
-        default: "#EB4D4B",
-    },
-    white: {
-        default: "#ffffff",
-    },
-    black: {
-        default: "#000000",
-    },
-  };
-
   useEffect(() => {
     const ctx = canvasEl.current.getContext("2d");
     // const ctx = document.getElementById("myChart");
@@ -44,7 +20,7 @@ export default function Chartbar() {
         ],
         datasets: [{
           label: 'Affirmation',
-          data: [300, 50, 100, 12, 30, 27, 61],
+          data: [400, 50, 100, 12, 30, 27, 61],
           backgroundColor: [
             '#6AB04C',
             '#BADC58',
@@ -74,7 +50,7 @@ export default function Chartbar() {
 
   return (
     <div className="Chartbar">
-      <canvas id="myChart" ref={canvasEl} height="100" />
+      <canvas ref={canvasEl} />
     </div>
   );
 }
