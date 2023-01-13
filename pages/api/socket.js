@@ -1,30 +1,35 @@
-// import { Server } from 'Socket.IO'
+import { Server } from 'Socket.IO'
+import { PrismaClient } from '@prisma/client';
 
-// const SocketHandler = (req, res) => {
-//   if (res.socket.server.io) {
-//     console.log('Socket is already running')
-//   } else {
-//     console.log('Socket is initializing')
-//     const io = new Server(res.socket.server)
-//     res.socket.server.io = io
-//   }
-//   res.end()
-// }
+const SocketHandler = (req, res) => {
+    if (res.socket.server.io) {
+        console.log('Socket is already running')
+    } else {
+        console.log('Socket is initializing')
+        const io = new Server(res.socket.server)
+        res.socket.server.io = io
+        
+        io.on('connection', socket => {
+            //Rejoindre une room
+            socket.on('send-connect', async obj => {
+                const prisma = new PrismaClient();
+                const pinSession = prisma.theme.findUnique({
+                    where: {
+                        pincode: obj.pincode,
+                    },
+                })
+                if (pinSession) {
+                    socket.join(obj.pincode);
 
-// export default SocketHandler
+                    socket.broadcast.emit("join-room", obj);
+                }
+            })
 
-import { Server } from 'socket.io'
 
-export default async function socket(req, res) {
-  if (res.socket.server.io) return res.end()
-  const io = new Server(res.socket.server)
-  res.socket.server.io = io
-
-  io.on('connection', socket => {
-    socket.on('send-connect', async obj => {
-    io.emit('connected_user', obj)
-    })
-  })
-
-  res.end()
+        })
+        
 }
+res.end()
+}
+
+    export default SocketHandler
