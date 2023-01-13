@@ -5,6 +5,7 @@ export default async function fetchTheme(req, res) {
 
     const data = await prisma.theme.findMany({
         select: {
+            id: true,
             name: true,
             pincode: true,
             attendees : true,

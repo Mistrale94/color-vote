@@ -5,6 +5,7 @@ import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import Link from 'next/link';
 // import { PlusCircleIcon } from "@heroicons/24/outline";
 
 
@@ -40,7 +41,7 @@ export default function NewForm() {
 
       if (res.ok) {
         setLoading(false);
-        router.push('/');
+        router.push('/newAnswer');
         toast.success('Theme créé avec succès');
       } else {
         setLoading(false);
@@ -89,16 +90,15 @@ export default function NewForm() {
             onChange={e => setInputedUser({ ...inputedUser, attendees: e.target.value })}
           >
           </input>
-            <input
-              type="file"
-              placeholder='Nombre de participant'
-              accept="image/png, image/jpeg, image/jpg"
-              className='mb-12 border-b-2 w-full'
-            >
-            </input>
-          <a href="#">{/*<PlusCircleIcon class="h-6 h-6 text-gray-500" /> */} Ajouter une question</a>
+          <input
+            type="file"
+            placeholder='Nombre de participant'
+            accept="image/png, image/jpeg, image/jpg"
+            className='mb-12 border-b-2 w-full'
+          >
+          </input>
           <button type='submit' className="bg-cyan-500 p-3 rounded-full text-white font-bold">
-            <span>Créer un formulaire</span>
+            <span>Ajouter des questions</span>
           </button>
         </form>
       </main>
