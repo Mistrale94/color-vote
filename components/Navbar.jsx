@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 const Navbar = () => {
 
     const [menuActive, setMenuActive] = useState(false);
-    const [cookies, setCookie, removeCookie] = useCookies();
+    const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const [currentUser, setCurrentUser] = useState(null);
     const router = useRouter();
 
@@ -23,15 +23,18 @@ const Navbar = () => {
         toast.success('Déconnecté');
     };
 
+    
+
     return (
         <div className='flex items-center justify-between p-2'>
             <Image src="/image/logo.png" width={40} height={40} alt="Logo"/>
             <div className='flex space-x-2'>
                 
+                
                 <AiFillInfoCircle className='text-2xl'/>
                 <AiOutlinePlusCircle className='text-2xl'/>
-                <li
-                    className="btnLink"
+                {cookies.user && <li
+                    className="list-none"
                     onClick={e => {
                       logout(e);
                       setMenuActive(!menuActive);
@@ -40,7 +43,7 @@ const Navbar = () => {
                     <Link href="/">
                         <IoExitOutline className='text-2xl'/>
                     </Link>
-                </li>
+                </li>}
             </div>
         </div>
     );

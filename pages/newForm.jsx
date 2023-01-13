@@ -5,6 +5,7 @@ import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";
 import toast from "react-hot-toast";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import Link from 'next/link';
 // import { PlusCircleIcon } from "@heroicons/24/outline";
 
 
@@ -26,18 +27,21 @@ export default function NewForm() {
       toast.error('Vous devez être connecté pour poster un message');
       router.push('/auth/');
     } else {
-      const formData = new FormData();
-      formData.append('name', inputedUser.name);
-      formData.append('attendees', inputedUser.attendees);
-      formData.append('user', currentUser?.id);
       const res = await fetch(`/api/theme/create`, {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name : inputedUser.name,
+          attendees : inputedUser.attendees,
+          user : currentUser?.id
+        })
       });
 
       if (res.ok) {
         setLoading(false);
-        router.push('/');
+        router.push('/newAnswer');
         toast.success('Theme créé avec succès');
       } else {
         setLoading(false);
@@ -63,7 +67,8 @@ export default function NewForm() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-center">
+      <div className="flex justify-center">
+      <main className="text-center w-full sm:w-1/2 lg:w-1/3">
         <figure>
           <Image src="/image/logo.png" width={250} height={250} alt="Logo" className="mx-auto" />
         </figure>
@@ -86,19 +91,19 @@ export default function NewForm() {
             onChange={e => setInputedUser({ ...inputedUser, attendees: e.target.value })}
           >
           </input>
-            <input
-              type="file"
-              placeholder='Nombre de participant'
-              accept="image/png, image/jpeg, image/jpg"
-              className='mb-12 border-b-2 w-full'
-            >
-            </input>
-          <a href="#">{/*<PlusCircleIcon class="h-6 h-6 text-gray-500" /> */} Ajouter une question</a>
+          <input
+            type="file"
+            placeholder='Nombre de participant'
+            accept="image/png, image/jpeg, image/jpg"
+            className='mb-12 border-b-2 w-full'
+          >
+          </input>
           <button type='submit' className="bg-cyan-500 p-3 rounded-full text-white font-bold">
-            <span>Créer un formulaire</span>
+            <span>Ajouter des questions</span>
           </button>
         </form>
       </main>
+      </div>
     </div>
   )
 }

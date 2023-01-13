@@ -167,7 +167,7 @@ export default function Signup() {
               <div
                 className="leading-none px-2 inline-block text-sm text-black tracking-wide font-medium bg-white transform translate-y-1/2"
               >
-                Or sign up with Google
+                Ou inscrivez-vous avec Google
               </div>
             </div>
 

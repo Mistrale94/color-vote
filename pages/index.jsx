@@ -57,25 +57,29 @@ const Home = () => {
 
       <Navbar />
 
-      <main className="text-center">
-      {newUser ? (
-          <div>{newUser.firstname} à rejoind la room {newUser.pincode}</div>
-        ):(
-          ''
-        )} 
-        <figure>
-          <Image src="/image/logo.png" width={250} height={250} alt="Logo" className="mx-auto" />
-        </figure>
-        <h1 className="font-bold text-3xl mb-12">Code pin</h1>
+      <div className="flex justify-center">
+        <main className="text-center w-full sm:w-1/2 lg:w-1/3">
+
+          {newUser ? (
+            <div>{newUser.firstname}</div>
+          ):(
+            ''
+          )}
+
+          <figure>
+            <Image src="/image/logo.png" width={250} height={250} alt="Logo" className="mx-auto" />
+          </figure>
+          <h1 className="font-bold text-3xl mb-12">Code pin</h1>
 
         <form className='inline-grid w-9/12' onSubmit={handleSubmit}>
-          <input type="text" placeholder='Code de la session' className='mb-8 border-b-2 w-full outline-0' value={pincode} onChange={(e) => setPincode(e.target.value)}></input>
+          <input type="text" placeholder='Code de la session' className='mb-8 border-b-2 w-full outline-0'></input>
           <input type="text" placeholder='Prénom' className='mb-8 border-b-2 w-full outline-0' value={firstname} onChange={(e) => setFirstname(e.target.value)}></input>
           <input type="text" placeholder='Nom' className='mb-12 border-b-2 w-full outline-0' value={lastname} onChange={(e) => setLastname(e.target.value)}></input>
           <button type="submit" className="bg-cyan-500 p-3 rounded-full text-white font-bold outline-0">Rejoindre la session</button>
         </form>
 
-      </main>
+        </main>
+      </div>
 
       <Footer />
 
