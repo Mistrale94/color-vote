@@ -131,7 +131,7 @@ export default function Signin() {
               <div
                 className="leading-none px-2 inline-block text-sm text-black tracking-wide font-medium bg-white transform translate-y-1/2"
               >
-                Or sign up
+                Ou s'inscrire
               </div>
           </div>
 
