@@ -96,7 +96,7 @@ export default function Signin() {
           </input>
           <div>
             <input 
-              type="text"
+              type={`${showPassword ? 'text' : 'password'}`}
               placeholder='Mot de passe' 
               className='mb-12 border-b-2 w-full'
               value={inputedUser.password || ''}

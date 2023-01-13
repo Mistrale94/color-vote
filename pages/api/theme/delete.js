@@ -1,10 +1,9 @@
-import prisma from '../../../lib/prisma'
+// import { PrismaClient } from '@prisma/client'
 
-export default async function handle(req, res) {
-    const result = await prisma.theme.delete({
-        where: {
-            id: req.query.id,
-        }
-    });
-    res.json(result);
-}
+// const prisma = new PrismaClient()
+
+// export default async function deleteTheme(req, res) {
+//     prisma.students.deleteOne({
+//         id: ObjectId(id)
+//     })
+// }
