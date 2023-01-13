@@ -4,12 +4,18 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const ThemeDetail = ({ theme }) => {
+    const handleDelete = async (id) => {
+        await prisma.theme.delete({
+            where: { id },
+        });
+    }
 
     return (
         <div>
             <h1>{theme.name}</h1>
             <p>Attendees: {theme.attendees}</p>
             <p>Pincode: {theme.pincode}</p>
+            <button onClick={() => handleDelete(theme.id)}>Delete Theme</button>
         </div>
     );
 };
