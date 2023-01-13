@@ -9,13 +9,15 @@ const prisma = new PrismaClient();
 const ThemeDetail = ({ theme }) => {
 
     return (
-        <div className='px-8 text-center'>
-            <h1 className='font-bold text-3xl mb-12'>{theme.name}</h1>
-            <p>Attendees: {theme.attendees}</p>
-            <p>Pincode: {theme.pincode}</p>
-            <Chartpie />
-            <Chartbar/>
-            <button>Supprimer</button>
+        <div className='flex justify-center px-8'>
+            <div className='text-center w-full sm:w-1/2 lg:w-1/3 px-8'>
+                <h1 className='font-bold text-3xl mb-12'>{theme.name}</h1>
+                <p className='p-3 font-bold'>Attendees: {theme.attendees}</p>
+                <p className='p-3 font-bold'>Pincode: {theme.pincode}</p>
+                <Chartpie />
+                <Chartbar/>
+                <button>Supprimer</button>
+            </div>
         </div>
     );
 };

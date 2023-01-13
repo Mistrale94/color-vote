@@ -172,7 +172,6 @@ export default function Signup() {
             </div>
 
 
-
           <button type="submit" className="border-solid border-2 border-black mb-8 p-3 rounded-full mt-4 font-bold">S'inscrire avec Google</button>
         </form>
 
