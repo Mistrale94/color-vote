@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import { MdOutlineDownload } from 'react-icons/md'
-// import Link from 'next/link'
+import Link from 'next/link'
 
 export default function Questionnaire({data}) {
 
   return (      
       <div className='relative inline-grid text-center mb-9'>
-        {/* <Link href={`/details/${data.id}`}> */}
+        <Link href={`/details/${data.id}`}>
           <figure>
             <Image src="/image/questionnaire.png" width={250} height={250} alt="Questionnaire" className='w-full rounded-xl drop-shadow-xl'/>
           </figure>
@@ -19,7 +19,7 @@ export default function Questionnaire({data}) {
               <p>Export csv</p>
             </button>
           </div>
-        {/* </Link> */}
+        </Link>
       </div>
   )
 }

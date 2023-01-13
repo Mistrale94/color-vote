@@ -41,7 +41,7 @@ export default function NewForm() {
 
       if (res.ok) {
         setLoading(false);
-        router.push('/newAnswer');
+        router.push('/');
         toast.success('Theme créé avec succès');
       } else {
         setLoading(false);
@@ -97,8 +97,9 @@ export default function NewForm() {
             className='mb-12 border-b-2 w-full'
           >
           </input>
+          <a href="#">Ajouter une question</a>
           <button type='submit' className="bg-cyan-500 p-3 rounded-full text-white font-bold">
-            <span>Ajouter des questions</span>
+            <span>Créer un formulaire</span>
           </button>
         </form>
       </main>

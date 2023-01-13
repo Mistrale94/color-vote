@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 import { PrismaClient } from '@prisma/client';
+import Chartpie from '../../components/Chartpie';
+import Chartbar from '../../components/Chartbar';
+import Tab from '../../components/Tab';
 
 const prisma = new PrismaClient();
 
 const ThemeDetail = ({ theme }) => {
-    const handleDelete = async (id) => {
-        await prisma.theme.delete({
-            where: { id },
-        });
-    }
 
     return (
-        <div>
-            <h1>{theme.name}</h1>
+        <div className='px-8 text-center'>
+            <h1 className='font-bold text-3xl mb-12'>{theme.name}</h1>
             <p>Attendees: {theme.attendees}</p>
             <p>Pincode: {theme.pincode}</p>
-            <button onClick={() => handleDelete(theme.id)}>Delete Theme</button>
+            <Chartpie />
+            <Chartbar/>
+            <button>Supprimer</button>
         </div>
     );
 };
@@ -35,11 +35,21 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const theme = await prisma.theme.findUnique({
         where: { id: params.id },
-        select: { id: true, name: true, attendees: true, pincode: true, user_id: true }
+        select: { id: true, name: true, attendees: true, pincode: true, user_id: true, answers: true },
+    });
+    const answers = theme.answers.map(answer => {
+        return {
+            ...answer,
+            createdAt: answer.createdAt.toISOString(),
+            updatedAt: answer.updatedAt.toISOString()
+        }
     });
     return {
         props: {
-            theme
+            theme: {
+                ...theme,
+                answers
+            }
         }
     }
 }
